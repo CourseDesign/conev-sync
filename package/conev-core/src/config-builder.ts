@@ -7,7 +7,7 @@ export default class ConfigBuilder {
 
   private readonly envs: string[] = [];
 
-  private options: Options | undefined = undefined;
+  private options?: Options;
 
   addSource(...sources: Source[]): ConfigBuilder {
     this.sources.push(...sources);
@@ -21,7 +21,7 @@ export default class ConfigBuilder {
     return this;
   }
 
-  setOptions(options: Options | undefined): ConfigBuilder {
+  setOptions(options?: Options): ConfigBuilder {
     this.options = options;
 
     return this;

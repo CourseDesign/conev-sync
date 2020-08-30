@@ -7,9 +7,9 @@ export interface Source {
 export class Sources implements Source {
   private readonly sources: Source[];
 
-  private readonly options: Options | undefined;
+  private readonly options?: Options;
 
-  constructor(sources: Source[], options: Options | undefined = undefined) {
+  constructor(sources: Source[], options?: Options) {
     this.sources = sources;
     this.options = options;
   }

@@ -4,17 +4,13 @@ import Sources, { Source } from './sources';
 export default class Config {
   private readonly sources: Sources;
 
-  private readonly options: Options | undefined;
+  private readonly options?: Options;
 
   private readonly envs: string[];
 
   private values: Record<string, unknown> | null;
 
-  constructor(
-    sources: Source[],
-    envs: string[],
-    options: Options | undefined = undefined,
-  ) {
+  constructor(sources: Source[], envs: string[], options?: Options) {
     this.sources = new Sources(sources, options);
     this.envs = envs;
     this.options = options;
