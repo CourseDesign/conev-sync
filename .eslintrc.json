@@ -17,7 +17,8 @@
     "sourceType": "module",
     "project": [
       "tsconfig.json",
-      "package/conev-core/tsconfig.json"
+      "package/conev-core/tsconfig.json",
+      "package/conev-json-source/tsconfig.json"
     ]
   },
   "plugins": [
