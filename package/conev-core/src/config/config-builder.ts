@@ -1,6 +1,6 @@
 import { Options } from 'deepmerge';
 import Config from './config';
-import { Source } from '../../dist';
+import Source from '../source/source';
 
 export default class ConfigBuilder {
   private readonly sources: Source[] = [];
