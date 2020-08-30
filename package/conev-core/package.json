@@ -41,7 +41,6 @@
     }
   },
   "dependencies": {
-    "deepmerge": "^4.2.2",
-    "is-pure-object": "^1.0.1"
+    "deepmerge": "^4.2.2"
   }
 }
