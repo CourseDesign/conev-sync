@@ -1,5 +1,6 @@
 import merge, { Options } from 'deepmerge';
-import Sources, { Source } from './sources';
+import Sources from '../source/sources';
+import Source from '../source/source';
 
 export default class Config {
   private readonly sources: Sources;

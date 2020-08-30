@@ -1,10 +1,7 @@
 import merge, { Options } from 'deepmerge';
+import Source from './source';
 
-export interface Source {
-  export(): Map<string, Record<string, unknown>>;
-}
-
-export class Sources implements Source {
+class Sources implements Source {
   private readonly sources: Source[];
 
   private readonly options?: Options;
