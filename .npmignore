@@ -2,4 +2,9 @@ src
 script
 template
 .github
+.idea
 package
+*/**/node_modules
+*/**/src
+*/**/.idea
+
