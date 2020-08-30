@@ -21,7 +21,7 @@ describe('sources', () => {
     const config = sources.export();
 
     expect(config.get('default')).toEqual({
-      source: '1',
+      source: '2',
       port: 3000,
       db: 'postgres',
     });
@@ -37,7 +37,7 @@ describe('sources', () => {
     });
   });
 
-  test('add source', () => {
+  test('add', () => {
     const sources = new Sources([]);
 
     sources.add(source1).add(source2);
@@ -45,7 +45,7 @@ describe('sources', () => {
     const config = sources.export();
 
     expect(config.get('default')).toEqual({
-      source: '1',
+      source: '2',
       port: 3000,
       db: 'postgres',
     });

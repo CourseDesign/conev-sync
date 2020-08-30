@@ -13,7 +13,7 @@ export default class Config {
   constructor(
     sources: Source[],
     envs: string[],
-    options: Options | undefined = undefined
+    options: Options | undefined = undefined,
   ) {
     this.sources = new Sources(sources, options);
     this.envs = envs;
@@ -29,20 +29,20 @@ export default class Config {
       .map((env) => source.get(env))
       .filter((value) => value != null) as Record<string, unknown>[];
 
-    this.values = merge.all(configs.reverse(), this.options) as Record<
-      string,
-      unknown
-    >;
+    this.values = merge.all(configs, this.options) as Record<string, unknown>;
 
     return this;
   }
 
   get(key = ''): unknown | null {
-    const tokens = key.split('.');
+    const tokens: string[] = key.split('.');
 
     let current: any = this.values;
-    const token = tokens.pop();
-    while (token != null) {
+    for (
+      let token = tokens.pop();
+      token != null && token.length > 0;
+      token = tokens.pop()
+    ) {
       if (current == null) return null;
       current = current[token];
     }

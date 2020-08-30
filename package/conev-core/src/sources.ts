@@ -36,7 +36,7 @@ export class Sources implements Source {
     mergedConfig.forEach((value, key) => {
       config.set(
         key,
-        merge.all(value.reverse(), this.options) as Record<string, unknown>
+        merge.all(value, this.options) as Record<string, unknown>
       );
     });
 
