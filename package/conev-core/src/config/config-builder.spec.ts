@@ -1,7 +1,7 @@
-import Config from './config';
-import SourceMock from './source.mock';
+import ConfigBuilder from './config-builder';
+import SourceMock from '../source/source.mock';
 
-describe('config', () => {
+describe('config-builder', () => {
   const source1 = new SourceMock(
     new Map<string, Record<string, unknown>>([
       ['default', { source: '1', port: 3000, db: { type: 'postgres' } }],
@@ -23,8 +23,11 @@ describe('config', () => {
     ])
   );
 
-  test('get', () => {
-    const config = new Config([source1, source2], ['default', 'develop']);
+  test('build', () => {
+    const config = new ConfigBuilder()
+      .addSource(source1, source2)
+      .addEnv('default', 'develop')
+      .build();
 
     expect(config.get()).toEqual({
       source: '2',

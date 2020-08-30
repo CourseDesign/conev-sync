@@ -1,4 +1,4 @@
-import { Source } from './sources';
+import Source from './source';
 
 export default class SourceMock implements Source {
   private readonly map: Map<string, Record<string, unknown>>;
