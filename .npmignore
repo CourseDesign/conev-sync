@@ -4,6 +4,12 @@ template
 .github
 package
 
+.eslintignore
+gulpfile.js
+tsconfig.json
+tsconfig.production.json
+.eslintrc.json
+
 # Logs
 old/logs
 *.log
