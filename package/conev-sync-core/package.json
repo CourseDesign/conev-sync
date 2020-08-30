@@ -1,5 +1,5 @@
 {
-  "name": "conev-json-source",
+  "name": "conev-sync-core",
   "version": "1.0.0",
   "description": "",
   "main": "dist/index.js",
@@ -39,5 +39,8 @@
         "diagnostics": true
       }
     }
+  },
+  "dependencies": {
+    "deepmerge": "^4.2.2"
   }
 }
