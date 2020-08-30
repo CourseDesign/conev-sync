@@ -16,7 +16,8 @@
     "ecmaVersion": 12,
     "sourceType": "module",
     "project": [
-      "tsconfig.json"
+      "tsconfig.json",
+      "package/conev-core/tsconfig.json"
     ]
   },
   "plugins": [
