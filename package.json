@@ -1,5 +1,5 @@
 {
-  "name": "design-system",
+  "name": "conev-sync",
   "version": "1.0.0",
   "description": "",
   "main": "dist/index.js",
@@ -8,18 +8,19 @@
     "build:production": "cross-env NODE_ENV=production npm run build",
     "build": "gulp",
     "neon": "neon",
-    "lint": "eslint --fix . --resolve-plugins-relative-to .",
+    "lint": "eslint . --resolve-plugins-relative-to .",
+    "lint:fix": "eslint --fix . --resolve-plugins-relative-to .",
     "lint:staged": "lint-staged",
     "test": "jest",
     "package:init": "script/init-package.sh package",
-    "package:sync": "script/sync-package.sh package",
+    "package:snpync": "script/sync-package.sh package",
     "package:neon:init": "script/init-neon-package.sh package",
     "tsc:init": "tsc --init",
     "eslint": "eslint",
     "all:install": "script/run-command-all-package.sh install",
     "all:build": "script/run-command-all-package.sh run build",
     "all:build:production": "script/run-command-all-package.sh run build:production",
-    "prepublish": "npm run all:build:production && npm run test"
+    "prepublish": "npm run all:build:production"
   },
   "repository": {
     "type": "git",
@@ -38,7 +39,7 @@
     }
   },
   "lint-staged": {
-    "src/*.{js,ts}": [
+    "*.{js,ts}": [
       "eslint --fix"
     ]
   },
@@ -67,7 +68,7 @@
     "@typescript-eslint/parser": "^3.10.1",
     "cross-env": "^7.0.2",
     "eslint": "^7.7.0",
-    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-config-airbnb-typescript": "^9.0.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-prettier": "^3.1.4",
@@ -80,5 +81,9 @@
     "prettier": "^2.1.1",
     "ts-jest": "^26.3.0",
     "typescript": "^4.0.2"
+  },
+  "dependencies": {
+    "conev-core": "file:package/conev-core",
+    "conev-json-source": "file:package/conev-json-source"
   }
 }
