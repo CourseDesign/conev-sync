@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/ban-types */
-
 import merge, { Options } from 'deepmerge';
 import Sources, { Source } from './sources';
 
@@ -10,7 +8,7 @@ export default class Config {
 
   private readonly envs: string[];
 
-  private values: object | null;
+  private values: Record<string, unknown> | null;
 
   constructor(
     sources: Source[],
@@ -29,9 +27,12 @@ export default class Config {
     const source = this.sources.export();
     const configs = this.envs
       .map((env) => source.get(env))
-      .filter((value) => value != null) as object[];
+      .filter((value) => value != null) as Record<string, unknown>[];
 
-    this.values = merge.all(configs, this.options);
+    this.values = merge.all(configs.reverse(), this.options) as Record<
+      string,
+      unknown
+    >;
 
     return this;
   }
@@ -49,5 +50,3 @@ export default class Config {
     return current;
   }
 }
-
-/* eslint-enable @typescript-eslint/ban-types */
