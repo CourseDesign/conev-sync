@@ -35,7 +35,7 @@ export default class Config {
   }
 
   get(key = ''): unknown | null {
-    const tokens: string[] = key.split('.');
+    const tokens: string[] = key.split('.').reverse();
 
     let current: any = this.values;
     for (
