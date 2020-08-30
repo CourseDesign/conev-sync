@@ -1,5 +1,5 @@
 {
-  "name": "design-system",
+  "name": "conev-sync",
   "version": "1.0.0",
   "description": "",
   "main": "dist/index.js",
@@ -13,7 +13,7 @@
     "lint:staged": "lint-staged",
     "test": "jest",
     "package:init": "script/init-package.sh package",
-    "package:sync": "script/sync-package.sh package",
+    "package:snpync": "script/sync-package.sh package",
     "package:neon:init": "script/init-neon-package.sh package",
     "tsc:init": "tsc --init",
     "eslint": "eslint",
@@ -83,6 +83,7 @@
     "typescript": "^4.0.2"
   },
   "dependencies": {
-    "conev-core": "file:package/conev-core"
+    "conev-core": "file:package/conev-core",
+    "conev-json-source": "file:package/conev-json-source"
   }
 }
