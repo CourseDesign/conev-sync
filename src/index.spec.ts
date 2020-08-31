@@ -1,4 +1,4 @@
-import { ConfigBuilder, JsonSource } from from './index';
+import { ConfigBuilder, JsonSource } from './index';
 
 describe('conev', () => {
   const source1 = new JsonSource();
@@ -11,7 +11,7 @@ describe('conev', () => {
     port: 3000,
     db: { port: 7070, username: 'test', type: 'mysql' },
   });
-  source2.set('develop', { env: 'production', port: 3002 });
+  source2.set('production', { env: 'production', port: 3002 });
 
   test('get', () => {
     const config = new ConfigBuilder()

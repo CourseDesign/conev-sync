@@ -1,8 +1,9 @@
 {
   "name": "conev-sync-json-source",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "",
   "main": "dist/index.js",
+  "types" : "dist/index.d.ts",
   "scripts": {
     "test": "jest",
     "run": "node dist/index.js",
