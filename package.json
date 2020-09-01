@@ -1,26 +1,26 @@
 {
   "name": "conev-sync",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "run": "node dist/index.js",
-    "build:production": "cross-env NODE_ENV=production npm run build",
+    "prepublish": "npm run build:production",
     "build": "gulp",
-    "neon": "neon",
+    "build:production": "cross-env NODE_ENV=production npm run build",
+    "build:all": "script/run-command-all-package.sh run build",
+    "build:production:all": "script/run-command-all-package.sh run build:production",
     "lint": "eslint . --resolve-plugins-relative-to .",
     "lint:fix": "eslint --fix . --resolve-plugins-relative-to .",
     "lint:staged": "lint-staged",
     "test": "jest",
+    "install:all": "script/run-command-all-package.sh install",
     "package:init": "script/init-package.sh package",
-    "package:snpync": "script/sync-package.sh package",
     "package:neon:init": "script/init-neon-package.sh package",
-    "tsc:init": "tsc --init",
-    "eslint": "eslint",
-    "all:install": "script/run-command-all-package.sh install",
-    "all:build": "script/run-command-all-package.sh run build",
-    "all:build:production": "script/run-command-all-package.sh run build:production",
-    "prepublish": "npm run all:build:production"
+    "package:version:patch": "script/run-command-all-package.sh version patch",
+    "neon": "neon",
+    "eslint": "eslint"
   },
   "repository": {
     "type": "git",
@@ -83,7 +83,7 @@
     "typescript": "^4.0.2"
   },
   "dependencies": {
-    "conev-core": "file:package/conev-core",
-    "conev-json-source": "file:package/conev-json-source"
+    "conev-sync-core": "^1.0.3",
+    "conev-sync-json-source": "^1.0.3"
   }
 }
