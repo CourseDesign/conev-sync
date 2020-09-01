@@ -1,6 +1,6 @@
 {
   "name": "conev-sync-core",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "",
   "main": "dist/index.js",
   "types" : "dist/index.d.ts",
@@ -9,7 +9,7 @@
     "run": "node dist/index.js",
     "build": "gulp",
     "build:production": "cross-env NODE_ENV=production npm run build",
-    "install": "npm run build:production"
+    "prepublishOnly": "npm run build:production"
   },
   "author": "",
   "license": "ISC",
