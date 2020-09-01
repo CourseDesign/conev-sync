@@ -1,12 +1,12 @@
 {
   "name": "conev-sync",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "run": "node dist/index.js",
-    "prepublish": "npm run build:production",
+    "prepublishOnly": "npm run build:production",
     "build": "gulp",
     "build:production": "cross-env NODE_ENV=production npm run build",
     "build:all": "script/run-command-all-package.sh run build",
@@ -83,7 +83,7 @@
     "typescript": "^4.0.2"
   },
   "dependencies": {
-    "conev-sync-core": "^1.0.3",
-    "conev-sync-json-source": "^1.0.3"
+    "conev-sync-core": "^1.0.4",
+    "conev-sync-json-source": "^1.0.4"
   }
 }
