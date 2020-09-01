@@ -5,18 +5,20 @@
     "jest": true
   },
   "extends": [
+    "airbnb-typescript/base",
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:prettier/recommended",
-    "prettier/@typescript-eslint",
-    "airbnb-base"
+    "prettier/@typescript-eslint"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaVersion": 12,
     "sourceType": "module",
     "project": [
-      "tsconfig.json"
+      "tsconfig.json",
+      "package/conev-sync-core/tsconfig.json",
+      "package/conev-sync-json-source/tsconfig.json"
     ]
   },
   "plugins": [

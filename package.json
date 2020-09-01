@@ -1,25 +1,26 @@
 {
-  "name": "design-system",
-  "version": "1.0.0",
+  "name": "conev-sync",
+  "version": "1.0.1",
   "description": "",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "run": "node dist/index.js",
-    "build:production": "cross-env NODE_ENV=production npm run build",
+    "prepublish": "npm run build:production",
     "build": "gulp",
-    "neon": "neon",
-    "lint": "eslint --fix . --resolve-plugins-relative-to .",
+    "build:production": "cross-env NODE_ENV=production npm run build",
+    "build:all": "script/run-command-all-package.sh run build",
+    "build:production:all": "script/run-command-all-package.sh run build:production",
+    "lint": "eslint . --resolve-plugins-relative-to .",
+    "lint:fix": "eslint --fix . --resolve-plugins-relative-to .",
     "lint:staged": "lint-staged",
     "test": "jest",
+    "install:all": "script/run-command-all-package.sh install",
     "package:init": "script/init-package.sh package",
-    "package:sync": "script/sync-package.sh package",
     "package:neon:init": "script/init-neon-package.sh package",
-    "tsc:init": "tsc --init",
-    "eslint": "eslint",
-    "all:install": "script/run-command-all-package.sh install",
-    "all:build": "script/run-command-all-package.sh run build",
-    "all:build:production": "script/run-command-all-package.sh run build:production",
-    "prepublish": "npm run all:build:production && npm run test"
+    "package:version:patch": "script/run-command-all-package.sh version patch",
+    "neon": "neon",
+    "eslint": "eslint"
   },
   "repository": {
     "type": "git",
@@ -38,7 +39,7 @@
     }
   },
   "lint-staged": {
-    "src/*.{js,ts}": [
+    "*.{js,ts}": [
       "eslint --fix"
     ]
   },
@@ -67,7 +68,7 @@
     "@typescript-eslint/parser": "^3.10.1",
     "cross-env": "^7.0.2",
     "eslint": "^7.7.0",
-    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-config-airbnb-typescript": "^9.0.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-prettier": "^3.1.4",
@@ -80,5 +81,9 @@
     "prettier": "^2.1.1",
     "ts-jest": "^26.3.0",
     "typescript": "^4.0.2"
+  },
+  "dependencies": {
+    "conev-sync-core": "^1.0.3",
+    "conev-sync-json-source": "^1.0.3"
   }
 }
