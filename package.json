@@ -1,8 +1,9 @@
 {
   "name": "conev-sync",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "run": "node dist/index.js",
     "prepublish": "npm run build:production",
@@ -17,6 +18,7 @@
     "install:all": "script/run-command-all-package.sh install",
     "package:init": "script/init-package.sh package",
     "package:neon:init": "script/init-neon-package.sh package",
+    "package:version:patch": "script/run-command-all-package.sh version patch",
     "neon": "neon",
     "eslint": "eslint"
   },
@@ -81,7 +83,7 @@
     "typescript": "^4.0.2"
   },
   "dependencies": {
-    "conev-core": "file:package/conev-core",
-    "conev-json-source": "file:package/conev-json-source"
+    "conev-sync-core": "^1.0.3",
+    "conev-sync-json-source": "^1.0.3"
   }
 }
