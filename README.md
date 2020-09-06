@@ -61,7 +61,7 @@ You can set deepmerge options as follow :
 
 ### ConfigBuilder
 
-    class  ConfigBuilder {
+    class ConfigBuilder {
 		addSource(...sources: Source[]): ConfigBuilder;
 		addEnv(...envs: string[]): ConfigBuilder;
 		setOptions(options?: Options): ConfigBuilder;
@@ -85,9 +85,11 @@ You can set deepmerge options as follow :
     }
 `Source` defines the source from which to get the configuration. Map is returned as the result value of `export`. The key of this map is environment and the value is the configuration when environment.
 
+You can make custom `Source` and use that.
+
 ### Sources
 
-    class  Sources  implements  Source {
+    class Sources implements Source {
 	    constructor(sources: Source[], options?: Options);
 		add(source: Source, priority = -1): Sources;
 		export(): Map<string, Record<string, unknown>>;
@@ -97,7 +99,7 @@ You can set deepmerge options as follow :
 
 ### JsonSource
 
-    export  default  class  JsonSource {
+    export default class JsonSource {
 	    constructor();
 		set(env: string, json: Record<string, unknown>): JsonSource;
 		export(): Map<string, Record<string, unknown>>;
