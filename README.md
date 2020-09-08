@@ -94,7 +94,7 @@ You can make custom `Source` and use that.
 		add(source: Source, priority = -1): Sources;
 		export(): Map<string, Record<string, unknown>>;
 	}
-`Sources` defines the source by merging several sources. Use `add` to add source for new source. If priority is not defined, highest priority is added first. Map is returned as the result value of `export`. The key of this map is environment and the value is the configuration when environment.
+`Sources` defines the source by merging several sources. Use `add` to add source for new source. Map is returned as the result value of `export`. The key of this map is environment and the value is the configuration when environment.
 
 
 ### JsonSource
