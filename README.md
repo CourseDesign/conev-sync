@@ -19,7 +19,7 @@ npm install conev-sync
 
 ## Usage
 
-Get ConfigBuilder from conev and one or more Sources to use. In this example, the built-in JsonSource is used.
+Get ConfigBuilder from conev-sync and one or more Sources to use. In this example, the built-in JsonSource is used.
 
 ```typescript
 import { ConfigBuilder, JsonSource } from 'conev-sync';
@@ -49,14 +49,14 @@ builder
 ```
 
 
-Build configuration
+Build configuration.
 
 ```typescript
 const config = builder.build(); // This is the result of combining dev and basic.
 ```
 
 
-Use configuration
+Use configuration.
 
 ```typescript
 config.get(); // The whole configuration created comes out
