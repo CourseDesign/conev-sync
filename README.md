@@ -90,7 +90,7 @@ class ConfigBuilder {
 class Config {
     constructor(sources: Source[], envs: string[], options?: Options);
     sync(): Config;
-    get(key = ''): unknown | null;
+    get(key = ''): unknown | undefined;
 }
 ```
 `config`  is a container for configuration.  `config`  is provided by creating a new configuration from the configuration and environment obtained from  `source`.
