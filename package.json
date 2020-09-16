@@ -1,6 +1,6 @@
 {
   "name": "conev-sync",
-  "version": "1.0.2",
+  "version": "1.0.5",
   "description": "",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -24,14 +24,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/CourseDesign/design-system.git"
+    "url": "git+https://github.com/CourseDesign/conev-sync.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/CourseDesign/design-system/issues"
+    "url": "https://github.com/CourseDesign/conev-sync/issues"
   },
-  "homepage": "https://github.com/CourseDesign/design-system#readme",
+  "homepage": "https://github.com/CourseDesign/conev-sync#readme",
   "husky": {
     "hooks": {
       "pre-push": "npm run test",
@@ -83,7 +83,7 @@
     "typescript": "^4.0.2"
   },
   "dependencies": {
-    "conev-sync-core": "^1.0.4",
+    "conev-sync-core": "^1.0.5",
     "conev-sync-json-source": "^1.0.4"
   }
 }
