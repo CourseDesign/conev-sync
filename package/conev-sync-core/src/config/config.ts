@@ -1,6 +1,7 @@
 import merge, { Options } from 'deepmerge';
 import Sources from '../source/sources';
 import Source from '../source/source';
+import Cache from '../cache/cache';
 
 export default class Config {
   private readonly sources: Sources;
@@ -11,16 +12,21 @@ export default class Config {
 
   private values: Record<string, unknown> | null;
 
+  private cache: Cache<string, unknown>;
+
   constructor(sources: Source[], envs: string[], options?: Options) {
     this.sources = new Sources(sources, options);
     this.envs = envs;
     this.options = options;
     this.values = null;
+    this.cache = new Cache((key: string) => this.getValue(key));
 
     this.sync();
   }
 
   sync(): Config {
+    this.cache.refresh();
+
     const source = this.sources.export();
     const configs = this.envs
       .map((env) => source.get(env))
@@ -31,7 +37,11 @@ export default class Config {
     return this;
   }
 
-  get(key = ''): unknown | null {
+  get(key = ''): unknown | undefined {
+    return this.cache.get(key);
+  }
+
+  private getValue(key = ''): unknown | undefined {
     const tokens: string[] = key.split('.').reverse();
 
     let current: any = this.values;

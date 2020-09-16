@@ -16,7 +16,7 @@ if (key == null) {
 
 const value = process.argv[4];
 if (value == null) {
-  console.error('Value is undefined!');
+  console.error('Proxy is undefined!');
   process.exit(1);
 }
 

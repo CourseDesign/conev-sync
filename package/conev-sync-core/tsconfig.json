@@ -10,6 +10,7 @@
     /* Specify module code generation: 'none', 'commonjs', 'amd', 'system', 'umd', 'es2015', 'es2020', or 'ESNext'. */
     "lib": [
       "es2017",
+      "es2015",
       "dom"
     ],
     /* Specify library files to be included in the compilation. */
@@ -48,7 +49,7 @@
     /* Additional Checks */
     // "noUnusedLocals": true,                /* Report errors on unused locals. */
     // "noUnusedParameters": true,            /* Report errors on unused parameters. */
-    // "noImplicitReturns": true,             /* Report error when not all code paths in function return a value. */
+    // "noImplicitReturns": true,             /* Report error when not all code paths in function return a proxy. */
     // "noFallthroughCasesInSwitch": true,    /* Report errors for fallthrough cases in switch statement. */
 
     /* Module Resolution Options */
