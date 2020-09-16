@@ -83,7 +83,7 @@
     "typescript": "^4.0.2"
   },
   "dependencies": {
-    "conev-sync-core": "^1.0.4",
+    "conev-sync-core": "^1.0.5",
     "conev-sync-json-source": "^1.0.4"
   }
 }
